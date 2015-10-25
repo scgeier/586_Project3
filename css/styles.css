@@ -1,0 +1,22 @@
+#map {
+ width:90%;
+ display:inline-block;
+ position:relative;
+        }
+        
+#text {
+ width:90%;
+ margin-top:20%;
+ display: inline-block;
+ position:absolute;
+}
+        
+#navbar {
+    background:black;
+    height:10%;
+    color:white;
+}
+
+#cities {
+    font-family:Arial;
+}

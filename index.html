@@ -1,0 +1,544 @@
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+   <title>Project 3</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <!--cartoDB sheet-->
+    <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.15/themes/css/cartodb.css" />
+    <!--datatable-->
+    <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css">
+
+    </head>
+    
+<body>
+  <container-fluid>
+    <div class="row">
+     <div class="col-xs-12" id="navbar">
+      navbar
+     </div>
+    </div>
+  </container-fluid>
+      
+<container>
+  <div class="row">
+    <div class="col-xs-12 col-md-8">
+    <div id="map1" class="targetMap"></div>
+    <div id="map2" class="targetMap" style="display:none"></div>
+    <div id="map3" class="targetMap" style="display:none"></div>
+     </div>
+   <div class="col-xs-12 col-md-4">
+     <div id="text1" class="targetText">
+        <p>The migration of high-income earners bucks the overall trend of American relocation to the South and Southwest. In 2014, those earning $75,000 or more actually <em>left</em> those areas in greater numbers than in the rest of the country.</p>
+      <div id="text2" class="targetText" style="display:none">
+        <p>This will be the text that appears when you change maps...</p>
+      </div>
+     <button target="1" class="showMap">Within County</button>
+     <button target="2" class="showMap">New State</button>
+     </div>
+
+   </div>
+  </div>
+  
+  <div class="row">
+    <div id="line" style="width:70%; height:400px;"></div>
+  </div>
+  
+  <div class="row">
+    <div class="col-xs-12 col-md-8">
+        <table id="counties" class="display" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>County</th>
+                <th>State</th>
+                <th>Median Household Income</th>
+                <th>Percent Born in State</th>
+            </tr>
+        </thead>
+ 
+        <tfoot>
+            <tr>
+                <th>Rank</th>
+                <th>County</th>
+                <th>State</th>
+                <th>Median Household Income</th>
+                <th>Percent Born in State</th>
+            </tr>
+        </tfoot>
+ 
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Town of Vienna</td>
+                <td>Virginia</td>
+                <td>$126,991</td>
+                <td>27.4%</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Loudoun</td>
+                <td>Virginia</td>
+                <td>$115,574</td>
+                <td>35%</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>City of Falls Church</td>
+                <td>Virginia</td>
+                <td>$114,409</td>
+                <td>23.5%</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Fairfax</td>
+                <td>Virginia</td>
+                <td>$105,416</td>
+                <td>26.3%</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Los Alamos</td>
+                <td>New Mexico</td>
+                <td>$103,643</td>
+                <td>29%</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Howard</td>
+                <td>Maryland</td>
+                <td>$103,273</td>
+                <td>40.4%</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Hunterdon</td>
+                <td>New Jersey</td>
+                <td>$100,980</td>
+                <td>63.7%</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Douglas</td>
+                <td>Colorado</td>
+                <td>$99,198</td>
+                <td>36%</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Fairfax City</td>
+                <td>Virginia</td>
+                <td>$97,900</td>
+                <td>28.4%</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Somerset</td>
+                <td>New Jersey</td>
+                <td>$97,440</td>
+                <td>53.9%</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>Morris</td>
+                <td>New Jersey</td>
+                <td>$96,747</td>
+                <td>57.5%</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>Arlington</td>
+                <td>Virginia</td>
+                <td>$94,880</td>
+                <td>19.4%</td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>Nassau</td>
+                <td>New York</td>
+                <td>$93,613</td>
+                <td>71.4%</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>Montgomery</td>
+                <td>Maryland</td>
+                <td>$93,373</td>
+                <td>24%</td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>Stafford</td>
+                <td>Virginia</td>
+                <td>$93,065</td>
+                <td>37.4%</td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td>Prince William</td>
+                <td>Virginia</td>
+                <td>$91,098</td>
+                <td>33.5%</td>
+            </tr>
+            <tr>
+                <td>17</td>
+                <td>Calvert</td>
+                <td>Maryland</td>
+                <td>$90,838</td>
+                <td>49.3%</td>
+            </tr>
+            <tr>
+                <td>18</td>
+                <td>Marin</td>
+                <td>California</td>
+                <td>$89,268</td>
+                <td>48.3%</td>
+            </tr>
+            <tr>
+                <td>19</td>
+                <td>Putnam</td>
+                <td>New York</td>
+                <td>$89,218</td>
+                <td>72.7%</td>
+            </tr>
+            <tr>
+                <td>20</td>
+                <td>Charles</td>
+                <td>Maryland</td>
+                <td>$88,825</td>
+                <td>40.9%</td>
+            </tr>
+            <tr>
+                <td>21</td>
+                <td>Delaware</td>
+                <td>Ohio</td>
+                <td>$87,908</td>
+                <td>68.7%</td>
+            </tr>
+            <tr>
+                <td>22</td>
+                <td>Williamson</td>
+                <td>Tennessee</td>
+                <td>$87,832</td>
+                <td>41.4%</td>
+            </tr>
+            <tr>
+                <td>23</td>
+                <td>Forsyth</td>
+                <td>Georgia</td>
+                <td>$87,605</td>
+                <td>41.3%</td>
+            </tr>
+            <tr>
+                <td>24</td>
+                <td>Santa Clara</td>
+                <td>California</td>
+                <td>$86,850</td>
+                <td>46.1%</td>
+            </tr>
+            <tr>
+                <td>25</td>
+                <td>San Mateo</td>
+                <td>California</td>
+                <td>$85,648</td>
+                <td>47.6%</td>
+            </tr>
+            <tr>
+                <td>26</td>
+                <td>Chester</td>
+                <td>Pennsylvania</td>
+                <td>$84,741</td>
+                <td>64%</td>
+            </tr>
+            <tr>
+                <td>27</td>
+                <td>Suffolk</td>
+                <td>New York</td>
+                <td>$84,506</td>
+                <td>76.9%</td>
+            </tr>
+            <tr>
+                <td>28</td>
+                <td>Poquoson City</td>
+                <td>Virginia</td>
+                <td>$84,315</td>
+                <td>53.4%</td>
+            </tr>
+            <tr>
+                <td>29</td>
+                <td>Fauquier</td>
+                <td>Virginia</td>
+                <td>$83,877</td>
+                <td>49.7%</td>
+            </tr>
+            <tr>
+                <td>30</td>
+                <td>Anne Arundel</td>
+                <td>Maryland</td>
+                <td>$83,456</td>
+                <td>50.5%</td>
+            </tr>
+            <tr>
+                <td>31</td>
+                <td>Sussex</td>
+                <td>New Jersey</td>
+                <td>$83,089</td>
+                <td>69.9%</td>
+            </tr>
+            <tr>
+                <td>32</td>
+                <td>Rockland</td>
+                <td>New York</td>
+                <td>$82,534</td>
+                <td>62.8%</td>
+            </tr>
+            <tr>
+                <td>33</td>
+                <td>Monmouth</td>
+                <td>New Jersey</td>
+                <td>$82,265</td>
+                <td>56.8%</td>
+            </tr>
+            <tr>
+                <td>34</td>
+                <td>Fayette</td>
+                <td>Georgia</td>
+                <td>$82,216</td>
+                <td>41.7%</td>
+            </tr>
+            <tr>
+                <td>35</td>
+                <td>Scott</td>
+                <td>Minnesota</td>
+                <td>$82,190</td>
+                <td>67.8%</td>
+            </tr>
+            <tr>
+                <td>36</td>
+                <td>Hamilton</td>
+                <td>Indiana</td>
+                <td>$81,947</td>
+                <td>58.6%</td>
+            </tr>
+            <tr>
+                <td>37</td>
+                <td>Bergen</td>
+                <td>New Jersey</td>
+                <td>$81,708</td>
+                <td>42.9%</td>
+            </tr>
+            <tr>
+                <td>38</td>
+                <td>Frederick</td>
+                <td>Maryland</td>
+                <td>$81,686</td>
+                <td>50.8%</td>
+            </tr>
+            <tr>
+                <td>39</td>
+                <td>Carroll</td>
+                <td>Maryland</td>
+                <td>$81,621</td>
+                <td>67%</td>
+            </tr>
+            <tr>
+                <td>40</td>
+                <td>Fairfield</td>
+                <td>Connecticut</td>
+                <td>$81,268</td>
+                <td>43.7%</td>
+            </tr>
+            <tr>
+                <td>41</td>
+                <td>Queen Anne's</td>
+                <td>Maryland</td>
+                <td>$81,096</td>
+                <td>62.1%</td>
+            </tr>
+            <tr>
+                <td>42</td>
+                <td>York</td>
+                <td>Virginia</td>
+                <td>$81,055</td>
+                <td>41.9%</td>
+            </tr>
+            <tr>
+                <td>43</td>
+                <td>Norfolk</td>
+                <td>Massachusetts</td>
+                <td>$81,027</td>
+                <td>64.6%</td>
+            </tr>
+            <tr>
+                <td>44</td>
+                <td>Alexandria City</td>
+                <td>Virginia</td>
+                <td>$80,847</td>
+                <td>21.3%</td>
+            </tr>
+            <tr>
+                <td>45</td>
+                <td>Collin</td>
+                <td>Texas</td>
+                <td>$80,504</td>
+                <td>45.2%</td>
+            </tr>
+            <tr>
+                <td>46</td>
+                <td>Carver</td>
+                <td>Minnesota</td>
+                <td>$80,280</td>
+                <td>69.2%</td>
+            </tr>
+            <tr>
+                <td>47</td>
+                <td>St. Mary's</td>
+                <td>Maryland</td>
+                <td>$80,053</td>
+                <td>45.9%</td>
+            </tr>
+            <tr>
+                <td>48</td>
+                <td>Kendall</td>
+                <td>Illinois</td>
+                <td>$79,897</td>
+                <td>74.4%</td>
+            </tr>
+            <tr>
+                <td>49</td>
+                <td>Fort Bend</td>
+                <td>Texas</td>
+                <td>$79,845</td>
+                <td>51.3%</td>
+            </tr>
+            <tr>
+                <td>50</td>
+                <td>Westchester</td>
+                <td>New York</td>
+                <td>$79,619</td>
+                <td>60.4%</td>
+            </tr>
+        </tbody>
+    </table>
+   </div>
+  </div>
+
+  
+  
+  
+</container>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js"></script>
+<script src="http://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
+<script>
+
+    
+var years = [];
+var within = [];
+var newcounty = [];
+var newstate = [];
+
+    function loadData(){
+        $.ajax({
+            url: 'line-data.xml',
+            type: 'GET',
+            data: 'xml',
+            success: parseData
+        });
+    };
+    
+    function parseData(xml){
+        console.log(xml);
+        
+        $(xml).find("year").each(function(index){
+            years.push($(this).attr("name"));
+            within.push(parseFloat($(this).find("within").text()));
+            newcounty.push(parseFloat($(this).find("newcounty").text()));
+            newstate.push(parseFloat($(this).find("newstate").text()));
+        });
+        
+        console.log(years);
+        buildLine();
+    };
+    
+    
+    function buildLine(){ 
+    $('#line').highcharts({
+        title: {
+            text: 'Geographic Mobility of High-Income Individuals, 2005-2014',
+            x: -20 //center
+        },
+        subtitle: {
+            text: 'Source: U.S. Census Bureau, American Community Survey 1-Year Estimates, 2005-2014',
+            x: -20
+        },
+        xAxis: {
+            categories: years
+        },
+        yAxis: {
+            title: {
+                text: 'Percent'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+            valueSuffix: '%'
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'bottom',
+            borderWidth: 0
+        },
+        series: [{
+            name: 'Moved within county',
+            data: within
+        }, {
+            name: 'Moved to new county in same state',
+            data: newcounty
+        }, {
+            name: 'Moved to new state',
+            data: newstate
+        }]
+    });
+};
+
+
+
+$(document).ready(function(){
+    console.log("doc ready!");
+    loadData();
+    $('#counties').DataTable();
+    
+  $('.showMap').click(function(){
+   $('.targetMap').hide();
+   $('#map'+$(this).attr('target')).show();
+    $('#text'+$(this).attr('target')).show();
+});
+    // get the viz.json url from the CartoDB Editor
+// - click on visualize
+// - create new visualization
+// - make visualization public
+// - click on publish
+// - go to API tab
+    window.onload = function() {
+  cartodb.createVis('map1', 'https://scgeier.cartodb.com/api/v2/viz/bfb39a3c-7b44-11e5-a4a7-0ecd1babdde5/viz.json');
+  cartodb.createVis('map2', 'https://scgeier.cartodb.com/api/v2/viz/98cb93f8-7792-11e5-ad9d-0e8c56e2ffdb/viz.json');
+};
+});
+
+</script>
+    </body>
+</html>

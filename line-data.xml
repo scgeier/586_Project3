@@ -1,0 +1,63 @@
+<xml>
+    <years>
+        <year name="2005">
+            <within>5.73</within>
+            <newcounty>2.17</newcounty>
+            <newstate>2.33</newstate>
+        </year>
+        
+        <year name="2006">
+            <within>5.37</within>
+            <newcounty>2.11</newcounty>
+            <newstate>2.42</newstate>
+        </year>
+                
+        <year name="2007">
+            <within>4.9</within>
+            <newcounty>1.94</newcounty>
+            <newstate>2.25</newstate>
+        </year>
+         
+        <year name="2008">
+            <within>4.69</within>
+            <newcounty>1.79</newcounty>
+            <newstate>2.12</newstate>
+        </year>
+        
+        <year name="2009">
+            <within>4.58</within>
+            <newcounty>1.69</newcounty>
+            <newstate>1.92</newstate>
+        </year>
+                
+        <year name="2010">
+            <within>4.93</within>
+            <newcounty>1.76</newcounty>
+            <newstate>1.92</newstate>
+        </year>
+                 
+        <year name="2011">
+            <within>4.81</within>
+            <newcounty>1.77</newcounty>
+            <newstate>2.01</newstate>
+        </year>
+        
+        <year name="2012">
+            <within>4.87</within>
+            <newcounty>1.82</newcounty>
+            <newstate>2.07</newstate>
+        </year>
+                
+        <year name="2013">
+            <within>5.31</within>
+            <newcounty>2</newcounty>
+            <newstate>2.16</newstate>
+        </year>
+         
+        <year name="2014">
+            <within>5.42</within>
+            <newcounty>2.12</newcounty>
+            <newstate>2.19</newstate>
+        </year>
+    </years>
+</xml>
