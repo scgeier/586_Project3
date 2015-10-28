@@ -8,6 +8,12 @@
 .container {
   width:90%;
 }
+
+@media only screen and (max-width: 768px) {
+    .container{
+        width:100%;
+    }
+}
   
 #map {
  width:90%;
@@ -24,28 +30,100 @@
         
 #navbar {
     background:black;
-    height:10%;
+    height:8%;
     color:white;
+    position:fixed;
+    z-index:1;
 }
 
-#logo-area a {
-    display:inline-block;
+
+#white-logo {
+  max-width:100%;
+  height:90%;
+}
+
+@media only screen and (max-width: 768px) {
+    #white-logo{
+        height:70%;
+    }
+}
+
+#logo-text-area {
+ padding-top:0.5%;
 }
 
 #logo-text {
     font-family:Decima;
-    font-size:2em;
+    font-size:1.8em;
+    font-weight:bold;
     color:white;
-    letter-spacing:2px;
-    padding-top:3%;
+    letter-spacing:3px;
+}
+
+@media only screen and (max-width: 768px) {
+    #logo-text{
+        display:none;
+    }
+}
+
+#interactive-title {
+  padding-left:10%;
+  padding-top:1.2%
 }
 
 #interactive-text {
-    color:red;
+    color:#FFA319;
     font-family:Decima;
+    font-size:1.2em;
     letter-spacing:2px;
     margin-left:20%;
-    padding-top:5%;
+}
+
+@media only screen and (max-width: 768px) {
+   #interactive-text {
+        margin-left:0;
+        margin-right:30%;
+    }
+}
+
+#social-nav {
+  padding-left:35%;
+  padding-top:1%;
+}
+
+#social-nav a {
+  display:inline-block;
+  color:white;
+}
+
+@media only screen and (max-width: 768px) {
+   #social-nav {
+        padding-left:30%;
+    }
+}
+@media only screen and (max-width: 768px) {
+   #social-nav a{
+        zoom:50%;
+    }
+}
+
+
+#social-nav a:hover {
+  color:#FFA319;
+}
+
+#twitter {
+  padding-right:3%;
+}
+
+#content {
+  margin-top:5%;
+}
+
+@media only screen and (max-width: 768px) {
+    #content{
+        margin-top:15%;
+    }
 }
 
 #banner-box {
@@ -56,14 +134,32 @@
     margin-left:20%;
 }
 
+img {
+  max-width:100%;
+  height:auto;
+}
+
 #banner-ad {
     padding:2% 0% 2% 0%;
     border-bottom:1px solid black;
 }
 
+@media only screen and (max-width: 768px) {
+    #banner-box a{
+        margin:auto;
+    }
+}
+
+
 #headline-box {
     text-align:center;
     border-bottom:1px solid #eeeeee;
+}
+
+@media only screen and (max-width: 768px) {
+    #headline-text{
+        text-align:left;
+    }
 }
 
 h1 {
@@ -89,10 +185,6 @@ h2, h4, h5 {
     font-family:Decima;
 }
 
-#headline-text{
-    padding-left:20%;
-    padding-right:20%;
-}
 
 ul li {
     list-style:none;
@@ -119,17 +211,23 @@ iframe {
     margin-top:15%;
 }
 
+
+
 #map-section, #line-section, #table-section {
-    margin-top:2%;
     padding-bottom:5%;
     border-bottom:1px solid #eeeeee;
+}
+
+#line-section, #table-section {
+    margin-top:2%;
 }
 
 #cities {
     font-family:Arial;
 }
 
-#alamos, .suffolk, #kendall {
+
+#alamos, #suffolk, #kendall {
   color:orange;
 }
 
@@ -185,6 +283,7 @@ font-weight:normal;
 #fine-print-footer {
   padding-top:0.7%
 }
+
 #fine-print {
   color:gray;
   font-size:0.7em;
@@ -192,19 +291,75 @@ font-weight:normal;
   line-height:200%;
 }
 
+#mobile-fine-print {
+  font-size:0.6em;
+  line-height:150%;
+  text-align:center;
+}
+
 #fine-print a {
   color:black;
 }
 
-@media only screen and (max-width: 414px) {
-    #banner-ad {
-        display:none;
-    }
-}
 
-@media only screen and (max-width: 414px) {
+@media only screen and (max-width: 768px) {
     iframe, .container {
         width:100%;
         height:auto;
     }
+}
+
+@media only screen and (max-width: 768px) {
+    iframe {
+        zoom:150%;
+    }
+}
+
+@media screen and (min-width: 0px) and (max-width: 768px) {
+    #desktop-footer {
+      display:none;/*hide desktop footer on smaller screens*/
+    }
+}
+
+@media screen and (min-width: 0px) and (max-width: 768px) {
+    #mobile-footer {
+      display:block;/*show mobile footer on smaller screens*/
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1280px) {
+    #mobile-footer {
+      display:none;/*hide mobile footer on larger screens*/
+    }
+}
+
+#mobile-footer-top-bar {
+  border-top:2px solid black;
+  border-bottom:1px solid #dddddd;
+}
+
+#mobile-footer a {
+  color:gray;
+}
+
+#mobile-footer-top-bar a {
+  margin-left:35%;
+}
+
+#mobile-footer-bar2 {
+  border-bottom:1px solid #dddddd;
+}
+
+#mobile-contact, #mobile-jobs {
+  border-right:1px solid #dddddd;
+}
+
+#mobile-footer-bar2, #mobile-footer-bar3 {
+  text-align:center;
+}
+
+#mobile-footer-bar4, #mobile-footer-bar5, #mobile-footer-bar6, #mobile-footer-bar7, #mobile-footer-bar8 {
+  background:#eeeeee;
+  text-align:center;
+  margin:1% 0 1% 0;
 }

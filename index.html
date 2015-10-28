@@ -5,41 +5,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-   <title>Project 3</title>
+   <title>How The Money Moves</title>
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <!--cartoDB sheet-->
     <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.15/themes/css/cartodb.css" />
     <!--datatable-->
     <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css">
-    <link rel="icon" type="image/png" href="images/logo.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="images/logo-icon.png" sizes="16x16">
     <!--Q-Tip css-->
     <link type="text/css" rel="stylesheet" href="http://cdn.jsdelivr.net/qtip2/2.2.1/jquery.qtip.min.css" />
 
     </head>
     
 <body>
-  <container-fluid>
+  <div class="container-fluid">
     <div class="row">
      <div class="col-xs-12" id="navbar">
       <div class="row">
-        <div class="col-md-4" id="logo-area">
-          <a href="#"><img src="images/white-logo.png" alt="logo" height="100%" /></a>
+        <div class="col-xs-2 col-md-1" id="logo-area">
+          <a href="#"><img src="images/white-logo.png" alt="logo" id="white-logo"/></a>
+        </div>
+        <div class="col-xs-2 col-md-3" id="logo-text-area">
           <a href="#"><p id="logo-text">FiveThirtyEight</p></a>
         </div>
         
-        <div class="col-md-4" id="interactive-title">
+        <div class="col-xs-3" id="interactive-title">
           <p id="interactive-text">INTERACTIVE</p>
         </div>
-        
+      <div class="col-xs-5" id="social-nav">
+        <a href="#"><i class="fa fa-twitter fa-2x" id="twitter"></i></a>
+        <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
       </div>
-      navbar
+      </div>
      </div>
     </div>
-  </container-fluid>
+  </div>
       
-<div class="container">
+<div class="container" id="content">
  <div class="row">
   <div class="col-xs-12" id="banner-ad">
     <div id="banner-box">
@@ -49,6 +54,7 @@
 </div>
  
  <div class="row" id="headline-box">
+  <div class="col-xs-12">
   <h1 id="headline"><strong>How the Money Moves</strong></h1>
   <h5 class="decima">By SCOTT GEIER</h5>
   <p class="article-text" id="headline-text">In the United States, geographic mobility has long been tied to economic mobility; people move out to move up, to get better jobs and make more money. But what about people who already make a good living? FiveThirtyEight analyzed census data to find out about the migratory patterns of people earning $75,000 or more.</p>
@@ -56,6 +62,7 @@
     <li id="methods">Methodology</li>
     <li id="methods-hidden"><p class="methods-text">The following visualizations were created using data from the U.S. Census Bureau's <a href="https://www.census.gov/programs-surveys/acs/about.html" target="_blank">American Community Survey (ACS)</a>, an annual survey that the government uses to determine the distribution of federal and state funds. In regard to domestic migration, the ACS tracks the annual number of people who live in the same residence as the previous year, those moved within their county of residence, those who moved to a new county in the same state, and those who left for a different state.</p></li>
   </ul>
+ </div>
  </div>
   
   
@@ -93,7 +100,7 @@
   
   <div class="row" id="table-section">
     <div class="col-xs-12 col-md-7">
-        <table id="counties" class="display" cellspacing="0" max-width="414px">
+        <table id="counties" class="display" cellspacing="0" width="100%">
         <thead>
             <tr>
                 <th>Rank</th>
@@ -145,7 +152,7 @@
             </tr>
             <tr>
                 <td>5</td>
-                <td><span id="alamos">Los Alamos</span></td>
+                <td id="alamos" data-toggle="tooltip" title="This county was created by the federal government to be the site of the Manhattan Project in 1949. Scientists and engineers still come from all over to work at Los Alamos National Laboratory, and it shows in the low percentage of native New Mexicans in the county.">Los Alamos</td>
                 <td>New Mexico</td>
                 <td>$103,643</td>
                 <td>29%</td>
@@ -299,7 +306,7 @@
             </tr>
             <tr>
                 <td>27</td>
-                <td><span class="suffolk">Suffolk</span></td>
+                <td id="suffolk" data-toggle="tooltip" title="Suffolk County is the home of the Hamptons and its million-dollar beach mansions. One might expect the area to have a low percentage of natives. But stats show the vast majority of full-time residents of Suffolk County are from the state of New York.">Suffolk</td>
                 <td>New York</td>
                 <td>$84,506</td>
                 <td>76.9%</td>
@@ -446,7 +453,7 @@
             </tr>
             <tr>
                 <td>48</td>
-                <td><span id="kendall">Kendall</span></td>
+                <td id="kendall" data-toggle="tooltip" title="This was the fastest growing county in the U.S. from 2000 to 2009, with a 110% increase in population. Kendall is the wealthiest county in the Chicago area and one of the hotbeds its suburban sprawl.">Kendall</td>
                 <td>Illinois</td>
                 <td>$79,897</td>
                 <td>74.4%</td>
@@ -494,7 +501,7 @@
 
 </div>
 
-<div class="container">
+<div class="container" id="desktop-footer">
   
 <div class="row" id="footer-top-bar">
   <div class="col-xs-12 col-md-1 nav"></div>
@@ -539,6 +546,67 @@
   <p id="fine-print"><a href=#">Terms of Use</a> and <a href="#">Privacy Policy</a> and Safety Information/<a href="#">Your California Privacy Rights</a> /<a href="#">Children's Online Privacy Policy </a> are applicable to you. Website design and Related Stories ©2015 ESPN Internet Ventures. <br/>Data visulatons and text ©2015 Scott C. Geier. All rights reserved.</p>
 </div>
 </div>
+
+<div class="container" id="mobile-footer">
+<div class="row">
+  <div class="col-xs-12" id="mobile-footer-top-bar">
+       <a><img src="images/logo.jpg" alt="logo" width="30%" /></a>
+  </div>
+</div>  
+
+<div class="row" id="mobile-footer-bar2">
+  <div class="col-xs-6" id="mobile-contact">
+       <a>CONTACT</a>
+  </div>
+    <div class="col-xs-6">
+       <a>ESPN</a>
+  </div>
+</div>
+
+<div class="row" id="mobile-footer-bar3">
+  <div class="col-xs-6" id="mobile-jobs">
+       <a>JOBS</a>
+  </div>
+    <div class="col-xs-6">
+       <a>MASTHEAD</a>
+  </div>
+</div>
+
+<div class="row" id="mobile-footer-bar4">
+  <div class="col-xs-12">
+    <a>POLITICS</a>
+  </div>
+</div>
+
+<div class="row" id="mobile-footer-bar5">
+  <div class="col-xs-12">
+    <a>ECONOMICS</a>
+  </div>
+</div>
+
+<div class="row" id="mobile-footer-bar6">
+  <div class="col-xs-12">
+    <a>SCIENCE</a>
+  </div>
+</div>
+
+<div class="row" id="mobile-footer-bar7">
+  <div class="col-xs-12">
+    <a>LIFE</a>
+  </div>
+</div>
+  
+<div class="row" id="mobile-footer-bar8">
+  <div class="col-xs-12">
+    <a>SPORTS</a>
+  </div>
+</div>
+  
+<div class="row" id="mobile-fine-print-footer">
+  <p id="mobile-fine-print"><a href=#">Terms of Use</a> and <a href="#">Privacy Policy</a> and Safety Information/<a href="#">Your California Privacy Rights</a> /<a href="#">Children's Online Privacy Policy </a> are applicable to you. Website design and Related Stories ©2015 ESPN Internet Ventures. <br/>Data visulatons and text ©2015 Scott C. Geier. All rights reserved.</p>
+</div>
+</div>
+
 
 
 
@@ -633,8 +701,8 @@ var newstate = [];
 
 
 $(document).ready(function(){
-    console.log("doc ready!");
-    
+    console.log("doc ready!"); 
+      
     $( "li" )
   .filter( ":odd" )
     .hide()
@@ -692,60 +760,10 @@ $(document).ready(function(){
     $("#map-text3").fadeIn(800);
   });
   
-    $('#alamos').qtip({ // Grab some elements to apply the tooltip to
-    content: {
-      text: 'This county was created by the federal government to be the site of the Manhattan Project in 1949. Scientists and engineers still come from all over to work at Los Alamos National Laboratory, and it shows in the low percentage of native New Mexicans in the county.',
-      title:'Los Alamos County, NM',
-      hide:'unfocus'
-      },
-    position: {
-        my: 'center left',  // Position my top left...
-        at: 'top right', // at the bottom right of...
-        target: $('#alamos') // my target
-    },
-        style: {
-        classes: 'qtip-dark qtip-shadow qtip-rounded',
-    }
-  
-});
+     $('#suffolk, #alamos, #kendall').tooltip();
+     
     
-    $('.suffolk').qtip({ // Grab some elements to apply the tooltip to
-    content: {
-      text: "You move to New York, make a ton of money, and buy a house in the Hamptons. But you probably don't live in your beach house year round. The vast majority of full-time residents of Suffolk County are from the state of New York.",
-      title:'Suffolk County, NY',
-      hide:'unfocus'
-      },
-    position: {
-        my: 'center left',  // Position my top left...
-        at: 'top right', // at the bottom right of...
-        target: $('.suffolk') // my target
-    },
-        style: {
-        classes: 'qtip-dark qtip-shadow qtip-rounded',
-    }
   
-});
-    
-    $('#kendall').qtip({ // Grab some elements to apply the tooltip to
-    content: {
-      text: 'This was the fastest growing county in the U.S. from 2000 to 2009, with a 110% increase in population during that period. Kendall was the biggest boom in the booming Chicago suburbs.',
-      title:'Kendall County, IL',
-      hide:'unfocus'
-      },
-    position: {
-        my: 'bottom left',  // Position my top left...
-        at: 'top right', // at the bottom right of...
-        target: $('#kendall') // my target
-    },
-        style: {
-        classes: 'qtip-dark qtip-shadow qtip-rounded',
-    }
-  
-});
-
-
-   
-
     // get the viz.json url from the CartoDB Editor
 // - click on visualize
 // - create new visualization
