@@ -1,3 +1,14 @@
+/*the 538 font*/
+@font-face {
+  font-family: Decima;
+  src: url('../fonts/JLSDataGothicC_NC.otf');
+  src: url('../fonts/JLSDataGothicR_NC.otf');
+  }
+  
+.container {
+  width:90%;
+}
+  
 #map {
  width:90%;
  display:inline-block;
@@ -17,6 +28,183 @@
     color:white;
 }
 
+#logo-area a {
+    display:inline-block;
+}
+
+#logo-text {
+    font-family:Decima;
+    font-size:2em;
+    color:white;
+    letter-spacing:2px;
+    padding-top:3%;
+}
+
+#interactive-text {
+    color:red;
+    font-family:Decima;
+    letter-spacing:2px;
+    margin-left:20%;
+    padding-top:5%;
+}
+
+#banner-box {
+    width:90%
+}
+
+#banner-box a {
+    margin-left:20%;
+}
+
+#banner-ad {
+    padding:2% 0% 2% 0%;
+    border-bottom:1px solid black;
+}
+
+#headline-box {
+    text-align:center;
+    border-bottom:1px solid #eeeeee;
+}
+
+h1 {
+    font-family: Franklin-Antiqua BQ, serif;
+    font-size:3em;
+}
+
+h2, h4, h5 {
+  font-family:Helvetica;
+  font-weight:bold;
+}
+
+.methods-text {
+  font-size:0.9em;
+}
+
+.article-text, #map-text1, #map-text2, #map-text3, #map-text4 {
+    font-family:Arial;
+    font-size:1.2em;
+}
+
+.decima {
+    font-family:Decima;
+}
+
+#headline-text{
+    padding-left:20%;
+    padding-right:20%;
+}
+
+ul li {
+    list-style:none;
+    margin:none;
+}
+
+#methods {
+    color: #1996E8;
+    font-family:Times New Roman;
+    font-weight:bold;
+    font-size:1.2em;
+}
+
+#map1, #map2, #map3 {
+  width:100%;
+  height:100%;
+}
+
+iframe {
+  border:none;
+}
+
+#map-text-area{
+    margin-top:15%;
+}
+
+#map-section, #line-section, #table-section {
+    margin-top:2%;
+    padding-bottom:5%;
+    border-bottom:1px solid #eeeeee;
+}
+
 #cities {
     font-family:Arial;
+}
+
+#alamos, .suffolk, #kendall {
+  color:orange;
+}
+
+#table-section {
+  border-bottom:2px solid black;
+}
+
+#related-stories-area {
+  padding-left:5%;
+}
+
+#related-stories-headline {
+  margin-left:1%;
+}
+
+#related-stories-area a {
+  color:black;
+}
+
+#footer-top-bar {
+  border-top:5px solid black;
+}
+
+#footer-top-bar a {
+  color:gray;
+}
+
+#footer-top-bar .nav {
+  padding-top:1%;
+}
+
+#espn{
+  margin-left:1.5%;
+}
+
+#footer-bottom-bar {
+  background:black;
+  padding-left:1%;
+}
+
+#footer-bottom-bar h5 {
+font-weight:normal;
+}
+
+#footer-bottom-bar a {
+  color:white;
+}
+
+#science {
+  margin-left:4%;
+}
+
+#fine-print-footer {
+  padding-top:0.7%
+}
+#fine-print {
+  color:gray;
+  font-size:0.7em;
+  text-align:center;
+  line-height:200%;
+}
+
+#fine-print a {
+  color:black;
+}
+
+@media only screen and (max-width: 414px) {
+    #banner-ad {
+        display:none;
+    }
+}
+
+@media only screen and (max-width: 414px) {
+    iframe, .container {
+        width:100%;
+        height:auto;
+    }
 }
